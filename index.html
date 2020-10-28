@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            This is rock-paper-scissors!
+        </title>
+            
+    </head>
+    <body>
+        <h1>
+            Test
+        </h1>
+
+
+    </body>
+    
+</html>
+
+<script>
+    const Rock = "ROCK"
+    const Paper = "PAPER"
+    const Scissors = "SCISSORS"
+    let playerSelection, computerSelection;
+
+    function computerPlay() {
+        let random = Math.floor(Math.random() * 100);
+        if (random < 34) {
+            return Rock;
+        } else if (random < 67) {
+            return Paper;
+        }
+
+        return Scissors;
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        let playerSelect = prompt("Select rock, paper or scissors")
+        playerSelection = playerSelect.toUpperCase();
+        computerSelection = computerPlay();
+        if (computerSelection == Rock && playerSelection == Scissors) {
+            return "You Lose! Rock beats Scissors"
+        } else if (computerSelection == Rock && playerSelection == Paper) {
+            return "You Win! Paper beats Rock"
+        } else if (computerSelection == Rock && playerSelection == Rock) {
+            return "Draw"
+        } else if (computerSelection == Paper && playerSelection == Scissors) {
+            return "You Win! Scissors beats Paper"
+        } else if (computerSelection == Paper && playerSelection == Paper) {
+            return "Draw"
+        }
+
+
+        return "Draw"
+    }
+
+
+
+</script>
