@@ -39,20 +39,52 @@
         playerSelection = playerSelect.toUpperCase();
         computerSelection = computerPlay();
         if (computerSelection == Rock && playerSelection == Scissors) {
-            return "You Lose! Rock beats Scissors"
+            console.log("You Lose! Rock beats Scissors");
+            return 0;
         } else if (computerSelection == Rock && playerSelection == Paper) {
-            return "You Win! Paper beats Rock"
+            console.log("You Win! Paper beats Rock");
+            return 1;
         } else if (computerSelection == Rock && playerSelection == Rock) {
-            return "Draw"
+            console.log("Draw");
+            return 2;
         } else if (computerSelection == Paper && playerSelection == Scissors) {
-            return "You Win! Scissors beats Paper"
+            console.log("You Win! Scissors beats Paper");
+            return 1;
         } else if (computerSelection == Paper && playerSelection == Paper) {
-            return "Draw"
-        }
-
-
-        return "Draw"
+            console.log("Draw");
+            return 2;
+        } else if (computerSelection == Paper && playerSelection == Rock) {
+            console.log("You Lose! Paper beats Rock");
+            return 0;
+        } else if (computerSelection == Scissors && playerSelection == Scissors) {
+            console.log("Draw");
+            return 2;
+        } else if (computerSelection == Scissors && playerSelection == Paper) {
+            console.log("You Lose! Scissors beats Paper");
+            return 0;
+        } else if (computerSelection == Scissors && playerSelection == Rock) {
+            console.log("You Win! Rock beats Scissors");
+            return 1;
+        } 
+        return 2;
     }
+
+    function game() {
+        let botScore = 0;
+        let playerScore = 0;
+
+        for (let i = 0; i < 5; i++) {
+            let round = playRound();
+            if (round == 0) {
+                botScore++;
+            } else if (round == 0) {
+                playerScore++;
+            };
+        }
+        console.log("Final Score: Bot Score: " + botScore + "\n" + "Player Score: " + playerScore);
+    }
+
+
 
 
 
