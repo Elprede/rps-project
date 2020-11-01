@@ -8,10 +8,9 @@
             
     </head>
     <body>
-        <h1>
-            Test
-        </h1>
-
+        <button id="Rock">Rock!</button>
+        <button id="Paper">Paper!</button>
+        <button id="Scissors">Scissors!</button>
 
     </body>
     
@@ -35,8 +34,8 @@
     }
 
     function playRound(playerSelection, computerSelection) {
-        let playerSelect = prompt("Select rock, paper or scissors")
-        playerSelection = playerSelect.toUpperCase();
+        //let playerSelect = prompt("Select rock, paper or scissors")
+        //playerSelection = playerSelect.toUpperCase();
         computerSelection = computerPlay();
         if (computerSelection == Rock && playerSelection == Scissors) {
             console.log("You Lose! Rock beats Scissors");
@@ -69,20 +68,36 @@
         return 2;
     }
 
-    function game() {
-        let botScore = 0;
-        let playerScore = 0;
+    const rockbtn = document.querySelector('#Rock');
+    rockbtn.addEventListener('click', function (e) {
+        playRound(Rock);
+    });
 
-        for (let i = 0; i < 5; i++) {
-            let round = playRound();
-            if (round == 0) {
-                botScore++;
-            } else if (round == 0) {
-                playerScore++;
-            };
-        }
-        console.log("Final Score: Bot Score: " + botScore + "\n" + "Player Score: " + playerScore);
-    }
+    const paperbtn = document.querySelector('#Paper');
+    paperbtn.addEventListener('click', function (e) {
+        playRound(Paper);
+    });
+
+    const scissorsbtn = document.querySelector('#Scissors');
+    scissorsbtn.addEventListener('click', function (e) {
+        playRound(Scissors);
+    });
+
+
+    // function game() {
+    //     let botScore = 0;
+    //     let playerScore = 0;
+
+    //     for (let i = 0; i < 5; i++) {
+    //         let round = playRound();
+    //         if (round == 0) {
+    //             botScore++;
+    //         } else if (round == 0) {
+    //             playerScore++;
+    //         };
+    //     }
+    //     console.log("Final Score: Bot Score: " + botScore + "\n" + "Player Score: " + playerScore);
+    // }
 
 
 
